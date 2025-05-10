@@ -31,7 +31,23 @@
           <h1 class="titulo">
             <a href="index.php">CAFETERIA<span></span></a>
           </h1>
-          <nav class="menu">
+          <nav>
+            <button type="button" class="btn-menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="#ffffff"
+                stroke="none"
+              >
+                <path
+                  d="M 4 7 L 4 9 L 28 9 L 28 7 Z M 4 15 L 4 17 L 28 17 L 28 15 Z M 4 23 L 4 25 L 28 25 L 28 23 Z"
+                ></path>
+              </svg>
+            </button>
             <ul class="links-menu">
               <li><a href="#carrosel">Home</a></li>
               <li><a href="./pages/servicos.php">Serviços</a></li>
@@ -45,16 +61,16 @@
     </header>
     <!-- Final da header -->
 
+    <!-- Começo conteúdo principal (main) -->
     <main>
-      <!-- Começo do site (main) -->
-      <article class="hero">
+      <div class="hero">
         <div class="conteudo-hero">
-          <div class="conteudo">
+          <article class="conteudo">
             <h2>Bem vindo(a)!</h2>
             <p>Nós somos a nova cafeteria sem gluten</p>
-          </div>
+          </article>
         </div>
-      </article>
+      </div>
 
       <!-- Sobre nós -->
       <div class="limitador">
@@ -77,6 +93,7 @@
                   <strong>cafés especiais</strong>, <strong>doces</strong> e
                   <strong>quitutes</strong> sem preocupação.
                 </p>
+
                 <p>
                   Aqui, todo o nosso cardápio é
                   <strong>100% livre de glúten</strong>, garantindo
@@ -89,6 +106,7 @@
                   cliente possa aproveitar sua experiência com
                   <strong>total confiança</strong>.
                 </p>
+
                 <p>
                   Mais do que uma cafeteria, somos um
                   <strong>espaço de encontro</strong> para
@@ -109,34 +127,135 @@
 
       <!-- Carrossel de compras -->
       <div class="container-carossel-de-compras" id="carrosel">
-        <article class="carrosel-de-compras">
-          <h2>Mais pedidos</h2>
-          <div class="card-produto">
-            <img
-              src="assets/foto-destaque.jpg"
-              alt=""
-              width="358px"
-              height="396px"
-            />
-            <h3>Nome do produto</h3>
-            <button type="button">Compre aqui</button>
-          </div>
-        </article>
+        <div class="limitador">
+          <article class="carrosel-de-compras">
+            <h2>Mais pedidos</h2>
+            <div class="container-card-slider">
+              <button type="button" class="slider-btn prev">&lt;</button>
+              <div class="container-card">
+                <div class="card-produto">
+                  <img
+                    src="assets/foto-destaque.jpg"
+                    alt=""
+                    width="358px"
+                    height="396px"
+                  />
+                  <h3>Nome do produto</h3>
+                  <button type="button">Compre aqui</button>
+                </div>
+                <div class="card-produto">
+                  <img
+                    src="assets/foto-destaque.jpg"
+                    alt=""
+                    width="358px"
+                    height="396px"
+                  />
+                  <h3>Nome do produto</h3>
+                  <button type="button">Compre aqui</button>
+                </div>
+                <div class="card-produto">
+                  <img
+                    src="assets/foto-destaque.jpg"
+                    alt=""
+                    width="358px"
+                    height="396px"
+                  />
+                  <h3>Nome do produto</h3>
+                  <button type="button">Compre aqui</button>
+                </div>
+                <div class="card-produto">
+                  <img
+                    src="assets/foto-destaque.jpg"
+                    alt=""
+                    width="358px"
+                    height="396px"
+                  />
+                  <h3>Nome do produto</h3>
+                  <button type="button">Compre aqui</button>
+                </div>
+              </div>
+              <button type="button" class="slider-btn next">&gt;</button>
+            </div>
+          </article>
+        </div>
       </div>
 
       <!-- Cards do Cardápio  -->
-      <div>
-        <section>
-          <div>
+      <div class="cardapio-container">
+        <div class="limitador">
+          <article class="cardapio">
             <h2>CARDÁPIO</h2>
-            <p>BEBIDAS</p>
-            <p>SALGADOS</p>
-            <p>DOCES</p>
-          </div>
-        </section>
-      </div>
 
-      <?php include "./includes/rodape.php"?>
+            <div class="card-cardapio-container">
+              <a href="" class="card-link">
+                <section class="card-cardapio">
+                  <h3>BEBIDAS</h3>
+                  <img src="assets/drink.png" alt="" />
+                </section>
+              </a>
+              <a href="" class="card-link">
+                <section class="card-cardapio">
+                  <h3>SALGADOS</h3>
+                  <img src="assets/food.png" alt="" />
+                </section>
+              </a>
+              <a href="" class="card-link">
+                <section class="card-cardapio">
+                  <h3>DOCES</h3>
+                  <img src="assets/confectionery.png" alt="" />
+                </section>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
     </main>
+
+    <footer>
+      <div class="limitador">
+        <div class="footer">
+          <div class="info">
+            <div class="endereco">
+              <div class="endereco-info">
+                <h2>Unidade Vila Mariana</h2>
+                <p>Rua não sei o lá, 123</p>
+              </div>
+              <div class="horarios">
+                <h2>Horários</h2>
+                <ul class="lista-horarios">
+                  <li>
+                    <p>08:00 às 22:00</p>
+                    <p><strong>Segunda a Sexta</strong></p>
+                  </li>
+
+                  <li>
+                    <p>10:00 às 22:00</p>
+                    <p><strong>Sábados</strong></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="contato">
+              <div class="whatsapp-info">
+                <h2>WhatsApp</h2>
+                <p><a href="tel:+5511981075141">(11)98107-5141</a></p>
+              </div>
+              <div class="email-info">
+                <h2>E-mail</h2>
+                <p>
+                  <a href="mailto:teste@teste.com">teste@teste.com</a>
+                </p>
+              </div>
+
+              <div class="img-info">
+                <img src="assets/pic_coffee.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/carrosel.js"></script>
+    <script src="js/menu.js"></script>
   </body>
 </html>

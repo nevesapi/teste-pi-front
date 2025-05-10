@@ -18,7 +18,6 @@ body {
 
 header {
   height: 5.3rem;
-  padding: 1.75rem 5rem;
 
   background-color: #465940;
 
@@ -33,13 +32,14 @@ header {
 }
 
 header a {
-  color: #fff;
+  color: #ffffff;
 }
 
 .limitador {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .header {
@@ -49,19 +49,55 @@ header a {
   align-items: center;
 }
 
-.header .links-menu {
+.header .btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.header .btn-menu:hover {
+  background: #5e7956;
 }
 
-.header .links-menu a {
-  padding: 0.25rem 0.5rem;
+.header .links-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  width: 100%;
+  height: 35vh;
+  padding: 0.5rem 2rem;
+
+  background-color: #465940;
+
+  position: absolute;
+  top: 5.125rem;
+  left: 0;
 }
-.header .links-menu a:hover {
-  background-color: #2b36275f;
+
+.header .links-menu.teste {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.header .links-menu li {
   border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.header .links-menu a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+}
+.header .links-menu li:hover {
+  background-color: #5e7956;
 }
 
 .hero {
@@ -90,24 +126,20 @@ header a {
 }
 
 .conteudo h2 {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   margin-bottom: 1rem;
 }
 
 .conteudo p {
-  font-size: 2rem;
+  font-size: clamp(1.125rem, 3vw, 2rem);
 }
+
 .article-sobre {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-.sobre {
-  margin: 2rem 0;
-}
-
 .sobre p {
   color: #222222;
 }
@@ -119,17 +151,17 @@ header a {
 
 .sobre h2 {
   font-size: 2.25rem;
+  margin: 1rem 0;
 }
 .sobre p {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   margin-top: 1rem;
   line-height: 150%;
 }
 
 .sobre-container {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  flex-direction: column;
 }
 
 .sobre-container img {
@@ -153,12 +185,29 @@ header a {
 .carrosel-de-compras h2 {
   font-size: 2.25rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.container-card-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.container-card {
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .card-produto {
-  width: 100%;
-  max-width: 25rem;
+  flex: 0 0 auto;
+  width: 21rem;
+
   padding: 1.5rem;
 
   background-color: #465940;
@@ -169,6 +218,35 @@ header a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 2rem;
+
+  background: #465940;
+  color: #ffffff;
+
+  border: none;
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.slider-btn:hover {
+  background: #617b59;
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
 }
 
 .card-produto img {
@@ -198,4 +276,79 @@ header a {
 .card-produto button:hover {
   transform: scale(1.05);
   font-size: 1.25rem;
+}
+
+.cardapio-container {
+  background-color: #465940;
+  color: #ffffff;
+  height: 80vh;
+}
+
+.cardapio h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-cardapio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-link {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.card-link:hover {
+  background-color: #ffffffd7;
+  transform: scale(1.05);
+}
+
+.card-cardapio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 8rem;
+}
+
+.card-cardapio h3 {
+  color: #465940;
+}
+.card-cardapio img {
+  width: 100%;
+  height: 100px;
+}
+
+.footer .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.endereco {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.endereco-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.horarios,
+.lista-horarios,
+.contato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contato img {
+  width: 100%;
+  border-radius: 0.5rem;
 }
