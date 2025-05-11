@@ -16,6 +16,19 @@ body {
   background-color: #ffffff;
 }
 
+i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 header {
   height: 5.3rem;
 
@@ -33,10 +46,18 @@ header {
 
 header a {
   color: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .limitador {
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -49,16 +70,30 @@ header a {
   align-items: center;
 }
 
+.header h1 {
+  font-weight: 300;
+}
+.header h1:hover {
+  transform: scale(1.05);
+}
+
+.header a img {
+  width: 100%;
+  height: 30px;
+  object-fit: cover;
+}
+
 .header .btn-menu {
-  background: none;
-  border: none;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   padding: 0.5rem;
   border-radius: 0.5rem;
+
+  font-size: 2rem;
+  color: #ffffff;
 }
 .header .btn-menu:hover {
   background: #5e7956;
@@ -68,7 +103,7 @@ header a {
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease-out;
 
   width: 100%;
   height: 35vh;
@@ -81,7 +116,7 @@ header a {
   left: 0;
 }
 
-.header .links-menu.teste {
+.header .links-menu.ativo {
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
@@ -91,20 +126,19 @@ header a {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.header .links-menu a {
-  display: inline-block;
-  width: 100%;
-  padding: 0.5rem;
-}
 .header .links-menu li:hover {
   background-color: #5e7956;
+}
+
+.header a[href*="cadastro"] {
+  text-decoration: underline;
 }
 
 .hero {
   width: 100%;
   height: 85vh;
 
-  background-image: url(assets/foto-destaque.jpg);
+  background-image: url(assets/images/foto-destaque.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -134,14 +168,23 @@ header a {
   font-size: clamp(1.125rem, 3vw, 2rem);
 }
 
-.article-sobre {
+.conteudo h2,
+.conteudo p {
+  animation: identifier 1s ease-out forwards;
+}
+
+.section-sobre {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 2rem 0;
 }
 .sobre p {
   color: #222222;
+  font-size: clamp(1.25rem, 1vw, 2rem);
+  margin-top: 1rem;
+  line-height: 150%;
 }
 
 .sobre h2,
@@ -151,12 +194,7 @@ header a {
 
 .sobre h2 {
   font-size: 2.25rem;
-  margin: 1rem 0;
-}
-.sobre p {
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  margin-top: 1rem;
-  line-height: 150%;
+  margin-bottom: 1rem;
 }
 
 .sobre-container {
@@ -171,15 +209,18 @@ header a {
   border-radius: 0.5rem;
 }
 
-.container-carossel-de-compras {
+.container-carossel-de-compras,
+.carrosel-de-compras {
   height: 100vh;
-
-  background-color: #bfa58e26;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container-carossel-de-compras {
+  background-color: #bfa58e26;
 }
 
 .carrosel-de-compras h2 {
@@ -218,6 +259,13 @@ header a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.card-produto button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .slider-btn {
@@ -278,66 +326,118 @@ header a {
   font-size: 1.25rem;
 }
 
+.card-produto button:hover i {
+  transform: translateX(0.5rem);
+  font-size: 1.5rem;
+}
+
 .cardapio-container {
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: #465940;
   color: #ffffff;
-  height: 80vh;
+}
+
+.cardapio {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.conteudo-cardapio,
+.card-cardapio-container {
+  max-width: 500px;
 }
 
 .cardapio h2 {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 4vw, 3rem);
   margin-bottom: 1rem;
-  text-align: center;
+}
+
+.cardapio p {
+  font-size: 1.25rem;
+  line-height: 150%;
 }
 
 .card-cardapio-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .card-link {
+  flex: 1;
+  height: 24vh;
+  max-width: 130px;
+
   background-color: #ffffff;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
 .card-link:hover {
   background-color: #ffffffd7;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  max-width: 220px;
 }
 
-.card-cardapio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 8rem;
-}
-
-.card-cardapio h3 {
+.card-link h3 {
+  font-size: 1.25rem;
   color: #465940;
 }
-.card-cardapio img {
+
+.card-link img {
+  max-width: 50px;
+}
+
+.footer h2 {
+  color: #465940;
+  margin-bottom: 0.25rem;
+}
+
+.footer p,
+.footer a {
+  color: #222222;
+  font-size: 1.125rem;
+}
+
+.footer img {
   width: 100%;
-  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .footer .info {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .endereco {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
 .endereco-info h2 {
   font-size: 2rem;
-  margin-bottom: 0.25rem;
 }
 
 .horarios,
@@ -348,7 +448,66 @@ header a {
   gap: 0.75rem;
 }
 
-.contato img {
-  width: 100%;
-  border-radius: 0.5rem;
+.contato {
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .header .btn-menu {
+    display: none;
+  }
+  .header .links-menu {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: all;
+
+    width: 100%;
+    height: auto;
+    padding: 0;
+
+    background-color: transparent;
+    position: initial;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header .links-menu li {
+    border-radius: 0.5rem;
+    margin-bottom: 0rem;
+  }
+
+  .sobre-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .sobre p:first-child {
+    margin-top: 0;
+  }
+
+  .footer .info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .endereco {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+@keyframes identifier {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
 }

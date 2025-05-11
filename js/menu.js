@@ -1,8 +1,13 @@
 const btnMenu = document.querySelector(".btn-menu");
+const btnMenuIcon = document.querySelector("#icon-menu");
 const menu = document.querySelector(".links-menu");
 
 btnMenu.addEventListener("click", () => {
-  console.log("Clicou");
+  menu.classList.toggle("ativo");
+  btnMenuIcon.classList.replace("fi-rr-menu-burger", "fi-rr-cross");
 
-  menu.classList.toggle("teste");
+  if (!menu.classList.contains("ativo")) {
+    btnMenuIcon.classList.replace("fi-rr-cross", "fi-rr-menu-burger");
+    return;
+  }
 });
