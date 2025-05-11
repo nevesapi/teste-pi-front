@@ -23,10 +23,12 @@ i {
   width: fit-content;
 }
 
+button {
+  cursor: pointer;
+}
 header button {
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 header {
@@ -450,6 +452,83 @@ header a {
 
 .contato {
   gap: 1.75rem;
+}
+
+.form-container {
+  background-color: #bfa58e26;
+}
+.form-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+.form-content,
+#my-form {
+  max-width: 30rem;
+}
+.form-content-container h2 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #465940;
+}
+
+.form-content-container p {
+  font-size: clamp(1.125rem, 6vw, 1.25rem);
+  line-height: 150%;
+  margin: 1.5rem 0;
+  color: #222222;
+}
+.form-content-container strong {
+  color: #465940;
+}
+
+#my-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #465940;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form label {
+  font-size: 1.125rem;
+}
+
+.form input,
+#my-form button {
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.form input {
+  font-size: 0.875rem;
+}
+
+#my-form button {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 @media (min-width: 768px) {
