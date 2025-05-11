@@ -73,60 +73,68 @@
     <main id="main-content">
       <div class="form-container">
         <div class="limitador">
-          <div class="form-content-container">
-            <div class="form-content">
-              <h2>Formulário Cooffee</h2>
-              <p>
-                Você que encara o <strong>glúten</strong> como inimigo número
-                um: <strong>seu lugar é aqui</strong>!
-                <strong>Cadastre-se grátis</strong> e aproveite o melhor dos
-                <strong>produtos sem glúten</strong>, feitos especialmente para
-                quem vive <strong>sem glúten</strong>, mas com
-                <strong>muito sabor</strong>.
-              </p>
-            </div>
-            <form
-              id="my-form"
-              action="https://formspree.io/f/mqakebnj"
-              method="post"
-            >
-              <div class="form">
-                <div class="nome">
-                  <label for="nome">Nome:</label>
-                  <input
-                    required
-                    type="text"
-                    name="nome"
-                    id="nome"
-                    placeholder="Digite o nome completo"
-                  />
-                </div>
-                <div class="email">
-                  <label for="email">E-mail:</label>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="exemplo@exemplo.com"
-                  />
-                </div>
-                <div class="password">
-                  <label for="password">Senha:</label>
-                  <input
-                    required
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Digite sua senha"
-                  />
-                </div>
+          <div class="form-align">
+            <div class="form-content-container">
+              <div class="form-content">
+                <h2>Formulário Cooffee</h2>
+                <p>
+                  Você que encara o <strong>glúten</strong> como inimigo número
+                  um: <strong>seu lugar é aqui</strong>!
+                  <strong>Cadastre-se grátis</strong> e aproveite o melhor dos
+                  <strong>produtos sem glúten</strong>, feitos especialmente
+                  para quem vive <strong>sem glúten</strong>, mas com
+                  <strong>muito sabor</strong>.
+                </p>
               </div>
-              <button id="my-form-button" class="btn-submit" type="submit">
-                Cadastrar <i class="fi fi-rr-paper-plane"></i>
-              </button>
-              <p id="my-form-status"></p>
-            </form>
+              <form
+                id="my-form"
+                action="https://formspree.io/f/mqakebnj"
+                method="post"
+              >
+                <div class="form">
+                  <div class="nome">
+                    <input
+                      required
+                      type="text"
+                      name="nome"
+                      id="nome"
+                      placeholder="Digite o nome completo"
+                      aria-label="Digite o nome completo"
+                    />
+                  </div>
+                  <div class="email">
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="exemplo@exemplo.com"
+                      aria-label="Digite o seu email"
+                    />
+                  </div>
+                  <div class="password">
+                    <input
+                      required
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Digite sua senha"
+                      aria-label="Digite a sua senha"
+                    />
+                  </div>
+                  <button
+                    id="my-form-button"
+                    class="btn-submit"
+                    type="submit"
+                    aria-label="Botão de concluir o cadastro"
+                  >
+                    Cadastrar <i class="fi fi-rr-paper-plane"></i>
+                  </button>
+                  <span id="my-form-status"></span>
+                </div>
+                <p><a href="">Já possui uma conta? Faça Login</a></p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
